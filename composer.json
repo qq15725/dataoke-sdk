@@ -1,0 +1,31 @@
+{
+  "name": "wxm/dataoke-sdk",
+  "type": "library",
+  "description": "dataoke SDK for php",
+  "keywords": [
+    "dataoke",
+    "taobao",
+    "sdk",
+    "php",
+    "laravel"
+  ],
+  "homepage": "https://github.com/qq15725/taobaoke-sdk",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "wxm",
+      "email": "157215725@qq.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.3",
+    "wxm/sdk-kernel": "^1.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dataoke\\": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
