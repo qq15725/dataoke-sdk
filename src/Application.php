@@ -10,6 +10,7 @@ use SDK\Kernel\ServiceContainer;
  * @link http://www.dataoke.com/pmc/openapi.html
  *
  * @property \Dataoke\Goods\GoodsClient $goods 商品
+ * @property \Dataoke\Tbk\TbkClient $tbk 淘宝客
  */
 class Application extends ServiceContainer
 {
@@ -21,6 +22,7 @@ class Application extends ServiceContainer
     protected $providers = [
         Auth\ServiceProvider::class,
         Goods\ServiceProvider::class,
+        Tbk\ServiceProvider::class,
     ];
 
     /**
