@@ -9,7 +9,7 @@ class ServiceProvider implements ServiceProviderInterface
 {
     public function register(Container $app)
     {
-        $app['taobao'] = function ($app) {
+        $app['tbk'] = function ($app) {
             return new TbkClient($app);
         };
     }
