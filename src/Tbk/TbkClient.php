@@ -28,4 +28,25 @@ class TbkClient extends BaseClient
 
         return $this->httpGet('api/tb-service/get-privilege-link', $query);
     }
+
+    /**
+     * 官方活动推广
+     *
+     * @param int $page
+     * @param int $perPage
+     * @param array $query
+     *
+     * @link http://www.dataoke.com/kfpt/api-d.html?id=24
+     *
+     * @return array
+     */
+    public function getActivities(int $page = 1, int $perPage = 20, array $query = [])
+    {
+        $query += [
+            'pageId' => $page,
+            'pageSize' => $perPage,
+        ];
+
+        return $this->httpGet('/api/category/get-tb-topic-list', $query);
+    }
 }
