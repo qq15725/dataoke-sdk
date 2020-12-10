@@ -19,6 +19,7 @@ class Converter
         $productId = $data->get('goodsId');
 
         return [
+            'channel' => 'dataoke',
             'product' => [
                 'id' => $productId,
                 'shop_id' => $shopId,
