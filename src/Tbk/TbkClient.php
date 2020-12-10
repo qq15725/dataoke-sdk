@@ -49,4 +49,43 @@ class TbkClient extends BaseClient
 
         return $this->httpGet('/api/category/get-tb-topic-list', $query);
     }
+
+    /**
+     * 淘系万能解析
+     *
+     * @param string $content
+     *
+     * @link http://www.dataoke.com/kfpt/api-d.html?id=33
+     *
+     * @return array
+     */
+    public function parse(string $content)
+    {
+        return $this->httpGet('/api/tb-service/parse-content', [
+            'content' => $content,
+        ]);
+    }
+
+    /**
+     * 联盟搜索
+     *
+     * @param string $keyword
+     * @param int $page
+     * @param int $perPage
+     * @param array $query
+     *
+     * @link http://www.dataoke.com/kfpt/api-d.html?id=13
+     *
+     * @return array
+     */
+    public function search(string $keyword, int $page = 1, int $perPage = 20, array $query = [])
+    {
+        $query += [
+            'pageId' => $page,
+            'pageSize' => $perPage,
+            'keyWords' => $keyword,
+        ];
+
+        return $this->httpGet('/api/tb-service/get-tb-service', $query);
+    }
 }

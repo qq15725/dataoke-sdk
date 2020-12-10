@@ -117,4 +117,27 @@ class GoodsClient extends BaseClient
 
         return $this->httpGet('api/goods/get-stale-goods-by-time', $query);
     }
+
+    /**
+     * 大淘客搜索
+     *
+     * @param string $keyword
+     * @param int $page
+     * @param int $perPage
+     * @param array $query
+     *
+     * @link http://www.dataoke.com/kfpt/api-d.html?id=9
+     *
+     * @return array
+     */
+    public function search(string $keyword, int $page = 1, int $perPage = 20, array $query = [])
+    {
+        $query += [
+            'pageId' => $page,
+            'pageSize' => $perPage,
+            'keyWords' => $keyword,
+        ];
+
+        return $this->httpGet('api/goods/get-dtk-search-goods', $query);
+    }
 }
