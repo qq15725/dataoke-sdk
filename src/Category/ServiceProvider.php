@@ -1,6 +1,6 @@
 <?php
 
-namespace Dataoke\Tbk;
+namespace Dataoke\Category;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
@@ -9,8 +9,8 @@ class ServiceProvider implements ServiceProviderInterface
 {
     public function register(Container $app)
     {
-        $app['tbk'] = function ($app) {
-            return new TbkClient($app);
+        $app['category'] = function ($app) {
+            return new CategoryClient($app);
         };
     }
 }

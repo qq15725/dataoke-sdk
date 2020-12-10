@@ -17,7 +17,7 @@ class GoodsClient extends BaseClient
      *
      * @return array
      */
-    public function list(int $page = 1, int $perPage = 100, array $query = [])
+    public function getGoodsList(int $page = 1, int $perPage = 20, array $query = [])
     {
         $query += [
             'pageId' => $page,
@@ -28,7 +28,7 @@ class GoodsClient extends BaseClient
     }
 
     /**
-     * 商品详情
+     * 单品详情
      *
      * @param $id
      *
@@ -36,7 +36,7 @@ class GoodsClient extends BaseClient
      *
      * @return array
      */
-    public function find($id)
+    public function getGoodsDetails($id)
     {
         return $this->httpGet('api/goods/get-goods-details', [
             'goodsId' => $id,
@@ -44,7 +44,7 @@ class GoodsClient extends BaseClient
     }
 
     /**
-     * 新增商品列表
+     * 定时拉取
      *
      * @param int $page
      * @param int $perPage
@@ -56,7 +56,7 @@ class GoodsClient extends BaseClient
      *
      * @return array
      */
-    public function createdList(int $page = 1, int $perPage = 100, ?string $start = null, ?string $end = null, array $query = [])
+    public function pullGoodsByTime(int $page = 1, int $perPage = 20, ?string $start = null, ?string $end = null, array $query = [])
     {
         $query += [
             'pageId' => $page,
@@ -69,7 +69,7 @@ class GoodsClient extends BaseClient
     }
 
     /**
-     * 更新商品列表
+     * 商品更新
      *
      * @param int $page
      * @param int $perPage
@@ -81,7 +81,7 @@ class GoodsClient extends BaseClient
      *
      * @return array
      */
-    public function updatedList(int $page = 1, int $perPage = 100, ?string $start = null, ?string $end = null, array $query = [])
+    public function getNewestGoods(int $page = 1, int $perPage = 20, ?string $start = null, ?string $end = null, array $query = [])
     {
         $query += [
             'pageId' => $page,
@@ -94,7 +94,7 @@ class GoodsClient extends BaseClient
     }
 
     /**
-     * 删除商品列表
+     * 失效商品
      *
      * @param int $page
      * @param int $perPage
@@ -106,7 +106,7 @@ class GoodsClient extends BaseClient
      *
      * @return array
      */
-    public function deletedList(int $page = 1, int $perPage = 100, ?string $start = null, ?string $end = null, array $query = [])
+    public function getStaleGoodsByTime(int $page = 1, int $perPage = 20, ?string $start = null, ?string $end = null, array $query = [])
     {
         $query += [
             'pageId' => $page,
@@ -130,7 +130,7 @@ class GoodsClient extends BaseClient
      *
      * @return array
      */
-    public function search(string $keyword, int $page = 1, int $perPage = 20, array $query = [])
+    public function getDtkSearchGoods(string $keyword, int $page = 1, int $perPage = 20, array $query = [])
     {
         $query += [
             'pageId' => $page,
