@@ -140,4 +140,28 @@ class GoodsClient extends BaseClient
 
         return $this->httpGet('api/goods/get-dtk-search-goods', $query);
     }
+
+    /**
+     * 京东一元购
+     *
+     * @param int $subsidy
+     * @param int $page
+     * @param int $perPage
+     * @param array $query
+     *
+     * @link http://www.dataoke.com/kfpt/api-d.html?id=40
+     *
+     * @return array
+     */
+    public function jdOneDollarPurchase($subsidy = 3, int $page = 1, int $perPage = 20, array $query = [])
+    {
+        $query += [
+            'sort' => 0,
+            'subsidy' => $subsidy,
+            'pageId' => $page,
+            'pageSize' => $perPage,
+        ];
+
+        return $this->httpGet('api/goods/jd-one-dollar-purchase', $query);
+    }
 }
