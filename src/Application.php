@@ -9,9 +9,9 @@ use SDK\Kernel\ServiceContainer;
  *
  * @link http://www.dataoke.com/pmc/openapi.html
  *
- * @property \Dataoke\Goods\GoodsClient $goods 商品
- * @property \Dataoke\TbService\TbServiceClient $tbService 淘宝官方服务
- * @property \Dataoke\Category\CategoryClient $category 分类
+ * @property \Dataoke\Goods\Goods $goods 商品
+ * @property \Dataoke\TbService\TbService $tbService 淘宝官方服务
+ * @property \Dataoke\Category\Category $category 分类
  * @property \Dataoke\Delanys\Delanys $delanys delanys
  */
 class Application extends ServiceContainer

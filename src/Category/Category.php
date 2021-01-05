@@ -4,7 +4,7 @@ namespace Dataoke\Category;
 
 use SDK\Kernel\BaseClient;
 
-class CategoryClient extends BaseClient
+class Category extends BaseClient
 {
     /**
      * 超级分类

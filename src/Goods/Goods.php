@@ -4,7 +4,7 @@ namespace Dataoke\Goods;
 
 use SDK\Kernel\BaseClient;
 
-class GoodsClient extends BaseClient
+class Goods extends BaseClient
 {
     /**
      * 商品列表

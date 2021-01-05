@@ -4,7 +4,7 @@ namespace Dataoke\TbService;
 
 use SDK\Kernel\BaseClient;
 
-class TbServiceClient extends BaseClient
+class TbService extends BaseClient
 {
     /**
      * 高效转链
@@ -71,21 +71,21 @@ class TbServiceClient extends BaseClient
     /**
      * 订单查询接口
      *
-     * @param string $startTime
-     * @param string $endTime
      * @param int $page
      * @param int $perPage
+     * @param string|null $startTime
+     * @param string|null $endTime
      * @param array $query
      *
      * @link http://www.dataoke.com/kfpt/api-d.html?id=27
      *
      * @return array
      */
-    public function getOrderDetails(string $startTime, string $endTime, int $page = 1, int $perPage = 20, array $query = [])
+    public function getOrderDetails(int $page = 1, int $perPage = 20, ?string $startTime = null, ?string $endTime = null, array $query = [])
     {
         $query += [
-            'startTime' => $startTime,
-            'endTime' => $endTime,
+            'startTime' => $startTime ?: date('Y-m-d H:i:s', time() - 3600 * 3),
+            'endTime' => $endTime ?: date('Y-m-d H:i:s'),
             'pageId' => $page,
             'pageSize' => $perPage,
         ];

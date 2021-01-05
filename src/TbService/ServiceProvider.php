@@ -10,7 +10,7 @@ class ServiceProvider implements ServiceProviderInterface
     public function register(Container $app)
     {
         $app['tbService'] = function ($app) {
-            return new TbServiceClient($app);
+            return new TbService($app);
         };
     }
 }
