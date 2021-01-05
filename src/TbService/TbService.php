@@ -88,6 +88,7 @@ class TbService extends BaseClient
             'endTime' => $endTime ?: date('Y-m-d H:i:s'),
             'pageId' => $page,
             'pageSize' => $perPage,
+            'queryType' => 1,
         ];
 
         return $this->httpGet('api/tb-service/get-order-details', $query);
