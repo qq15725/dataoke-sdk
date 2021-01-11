@@ -51,3 +51,4 @@ $dataoke->goods->getGoodsDetails(521383533703);
 - api/delanys/brand/get-goods-list (单个品牌详情)
 - api/category/get-super-category (超级分类)
 - api/category/get-tb-topic-list (官方活动推广)
+- api/dels/jd/kit/promotion-union-convert (京东商品转链)

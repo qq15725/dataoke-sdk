@@ -13,6 +13,7 @@ use SDK\Kernel\ServiceContainer;
  * @property \Dataoke\TbService\TbService $tbService 淘宝官方服务
  * @property \Dataoke\Category\Category $category 分类
  * @property \Dataoke\Delanys\Delanys $delanys delanys
+ * @property \Dataoke\Dels\Dels $dels
  */
 class Application extends ServiceContainer
 {
@@ -27,6 +28,7 @@ class Application extends ServiceContainer
         TbService\ServiceProvider::class,
         Category\ServiceProvider::class,
         Delanys\ServiceProvider::class,
+        Dels\ServiceProvider::class,
     ];
 
     /**

@@ -10,6 +10,7 @@ use Dataoke\Application;
  * @method static \Dataoke\TbService\TbService tbService()
  * @method static \Dataoke\Category\Category category()
  * @method static \Dataoke\Delanys\Delanys delanys()
+ * @method static \Dataoke\Dels\Dels dels()
  *
  * @mixin Application
  */
