@@ -13,6 +13,7 @@ class ServiceProvider implements ServiceProviderInterface
             /** @var \Dataoke\Application $app */
             $app->registerProviders([
                 Kit\ServiceProvider::class,
+                Order\ServiceProvider::class,
             ]);
 
             return new Jd($app);

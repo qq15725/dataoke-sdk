@@ -7,6 +7,7 @@ use SDK\Kernel\Exceptions\InvalidArgumentException;
 
 /**
  * @property \Dataoke\Dels\Jd\Kit\Kit $kit
+ * @property \Dataoke\Dels\Jd\Order\Order $order
  */
 class Jd extends BaseClient
 {
