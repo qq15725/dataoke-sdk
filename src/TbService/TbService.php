@@ -84,11 +84,12 @@ class TbService extends BaseClient
     public function getOrderDetails(int $page = 1, int $perPage = 20, ?string $startTime = null, ?string $endTime = null, array $query = [])
     {
         $query += [
-            'startTime' => $startTime ?: date('Y-m-d H:i:s', time() - 3600 * 3),
+            'startTime' => $startTime
+                ?: date('Y-m-d H:i:s', time() - 3600 * 3),
             'endTime' => $endTime ?: date('Y-m-d H:i:s'),
             'pageId' => $page,
             'pageSize' => $perPage,
-            'queryType' => 1,
+            'queryType' => 4,
         ];
 
         return $this->httpGet('api/tb-service/get-order-details', $query);
