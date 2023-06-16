@@ -36,7 +36,7 @@ class Converter
         $couponId = $matchs[1] ?? null;
         preg_match('#sellerId=(\w+)#', $couponUrl, $matchs);
         $shopId = $matchs[1] ?? null;
-        $productId = $data->get('goodsId');
+        $productId = $data->get('goodsSign', $data->get('goodsId'));
 
         $data = [
             'id' => $productId,
